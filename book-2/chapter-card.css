@@ -1,0 +1,81 @@
+/* CHAPTER CARD SETUP */
+
+.chapter-card {
+    width: 100%;
+    height: 100%;
+
+    --main-color: white;
+    --hover-color: rgba(232, 232, 232, 0.9);
+
+    background: var(--hover-color);
+    /* rgba(232, 232, 232, 0.9); */
+    color: var(--main-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    padding: 16px;
+    border-radius: 1.5rem;
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+
+    container-type: inline-size;
+    container-name: chapter;
+}
+
+.button svg {
+    stroke: currentColor;
+}
+
+.chapter-card:hover {
+    transform: scale(1.03);
+    /* background: rgba(232, 232, 232); */
+    z-index: 2;
+
+    background-color: var(--main-color);
+    color: var(--hover-color);
+}
+
+.chapter-card:hover svg {
+    transform: scale(1.03);
+}
+
+/* CHAPTER IMAGE SETUP */
+
+.chapter-image {
+    object-fit: contain;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 0;
+    pointer-events: none;
+
+    transition: all 0.4s ease;
+    filter 0.3s ease;
+
+    /* opacity: 0.95; */
+    filter: blur(0.005rem);
+}
+
+.chapter-card:hover .chapter-image {
+    /* filter: blur(0);
+    opacity: 1; */
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.chapter-image.bar {
+    height: 100%;
+    width: auto;
+}
